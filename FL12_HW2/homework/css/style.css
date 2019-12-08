@@ -1,0 +1,87 @@
+@media print {
+	.tm-content-box {
+		display: none;
+	}
+}
+
+.tm-nav-item a:hover, li.box-work:nth-child(odd){
+	background-color: lightskyblue;
+	color: #fff;
+}
+
+div.tm-banner{
+	background: linear-gradient(lightskyblue, burlywood );
+}
+div.tm-banner-inner{
+	background: url(../img/white-bg.jpg);
+}
+p.tm-banner-text{
+	text-shadow: 4px 3px 3px #333;
+	animation: 5s infinite slidein;
+	animation-timing-function: ease;
+}
+@keyframes slidein {
+	from {
+	  margin-left: 50%;
+	}
+  
+	to {
+	  margin-left: 0%;
+	}
+}
+
+.flex-2-col{
+	display: flex;
+	align-items: center;
+}
+
+.flex-2-col h2, .heading h2{
+	text-align: center;
+	color: lightskyblue;
+}
+
+
+li.box-bg:hover{
+background-color: lightgrey;
+color: lightskyblue;
+font-style: italic;
+}
+
+.heading li{
+	list-style-type:lower-alpha;
+}
+.heading li a:hover::before{
+	content: ">";
+	font-weight: bold;
+}
+.heading li:first-child::after, .heading li:nth-child(3)::after {
+	content: "New";
+	color: red;
+	font-variant: small-caps;
+	font-weight: bold;
+	vertical-align: super;
+}
+.blocks p.tm-section-description:last-child{
+	letter-spacing: 5px;
+	word-spacing: 10px;
+	font-style: italic;
+}
+
+li.box-work{
+	padding: 10px;
+}
+li.box-work p{
+	font-style: italic;
+}
+li.box-work p::first-letter{
+	font-weight: bold;
+}
+
+p.tm-section-description{
+	text-indent: 25px;
+	line-height: 30px;
+}
+
+nav, .tm-content-box{
+	box-shadow: 0 0 1em rgba(61, 55, 61, 0.7);
+}
