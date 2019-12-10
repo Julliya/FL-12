@@ -1,124 +1,179 @@
 @media print {
-	.tm-content-box {
+	body, .tm-main-content{
+		padding-top: 0;
+	}
+	.tm-sidebar,
+	#about, 
+	.gallery-container, 
+	.tm-team-img, 
+	#contact, 
+	.img-contact-us, 
+	div.carousel-item,
+	ol.carousel-indicators,
+	section.blocks div.flex-2-col{
 		display: none;
 	}
+	div.flex-2-col{
+		display: block;
+	}
+	div.tm-team-description-container{
+		max-width: none;
+	}
+	div.padding-medium, 
+	div.carousel{
+		margin: 0px;
+		padding: 0px;
+	}
+	.tm-content-box{
+		margin-bottom: 10px;
+	}
+	p.tm-section-description{
+		text-align: center;
+	}
+	 .heading h2, h2.tm-section-title{
+		text-align: center;
+		color: lightskyblue;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+	section.heading{
+		display: flex;
+		justify-content: center;
+	}
+	section.heading div{
+		display: block;
+		width: 45%;
+	}
+	section.heading div ol{
+		padding-left: 0px;
+	}
+	section.heading div ol li{
+		list-style-type: none;
+	}
+	section.heading div ol li:nth-child(odd) {
+		text-align: right;
+	  }
+	.blocks p.tm-section-description:last-child{
+		letter-spacing: 5px;
+		word-spacing: 10px;
+		font-style: italic;
+	}
+	
+	
 }
-
-.tm-nav-item a:hover,
-li.box-work:nth-child(odd) {
+@media screen{
+.tm-nav-item a:hover, li.box-work:nth-child(odd){
 	background-color: lightskyblue;
 	color: #fff;
 }
 
-div.tm-banner {
-	background: linear-gradient(lightskyblue, burlywood);
+div.tm-banner{
+	background: linear-gradient(lightskyblue, burlywood );
 }
-div.tm-banner-inner {
-	background: url('../img/white-bg.jpg');
+div.tm-banner-inner{
+	background: url(../img/white-bg.jpg);
 }
-p.tm-banner-text {
+p.tm-banner-text{
 	text-shadow: 4px 3px 3px #333;
 	animation: 5s infinite slidein;
 	animation-timing-function: ease;
 }
 @keyframes slidein {
 	from {
-		margin-left: 50%;
+	  margin-left: 50%;
 	}
-
+  
 	to {
-		margin-left: 0%;
+	  margin-left: 0%;
 	}
 }
 
-.flex-2-col {
+.flex-2-col{
 	display: flex;
 	align-items: center;
 }
 
-.flex-2-col h2,
-.heading h2 {
+.flex-2-col h2, .heading h2{
 	text-align: center;
 	color: lightskyblue;
 }
 
-li.box-bg:hover {
-	background-color: lightgrey;
-	color: lightskyblue;
-	font-style: italic;
+
+li.box-bg:hover{
+background-color: lightgrey;
+color: lightskyblue;
+font-style: italic;
 }
 
-.heading li {
-	list-style-type: lower-alpha;
+.heading li{
+	list-style-type:lower-alpha;
 }
-.heading li a:hover::before {
+.heading li a:hover::before{
 	content: ">";
 	font-weight: bold;
 }
-.heading li:first-child::after,
-.heading li:nth-child(3)::after {
+.heading li:first-child::after, .heading li:nth-child(3)::after {
 	content: "New";
 	color: red;
 	font-variant: small-caps;
 	font-weight: bold;
 	vertical-align: super;
 }
-.blocks p.tm-section-description:last-child {
+.blocks p.tm-section-description:last-child{
 	letter-spacing: 5px;
 	word-spacing: 10px;
 	font-style: italic;
 }
 
-li.box-work {
+li.box-work{
 	padding: 10px;
 }
-li.box-work p {
+li.box-work p{
 	font-style: italic;
 }
-li.box-work p::first-letter {
+li.box-work p::first-letter{
 	font-weight: bold;
 }
 
-p.tm-section-description {
+p.tm-section-description{
 	text-indent: 25px;
 	line-height: 30px;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
 button:hover {
-	background-color: lightskyblue;
+ background-color: lightskyblue;
 }
 #contact_name,
 #contact_email,
 #contact_subject {
-	border: none;
-	border-bottom: 1px solid lightskyblue;
+ border: none;
+ border-bottom: 1px solid lightskyblue;
 }
 #contact_message {
-	border: 1px solid lightskyblue;
-	background-image: url('../img/email-icon.png');
-	background-repeat: no-repeat;
-	background-size: 30px;
-	background-position: right 5px bottom 5px;
+ border: 1px solid lightskyblue;
+ background-image: url('../img/email-icon.png');
+ background-repeat: no-repeat;
+ background-size: 30px;
+ background-position: right 5px bottom 5px;
 }
 
 button.btn-primary {
-	display: block;
-	margin-left: auto;
-	border: 1px solid lightskyblue;
-	color: lightskyblue;
-	background-color: white;
-	padding: 15px 25px;
-	font-weight: 300;
+ display:block;
+ margin-left: auto;
+ border: 1px solid lightskyblue;
+ color: lightskyblue;
+ background-color: white;
+ padding: 15px 25px;
+ font-weight: 300;
 }
-nav,
-section,
-#home {
+nav, section, #home{
 	box-shadow: 0 0 1em rgba(61, 55, 61, 0.7);
 }
-section::before {
-	content: "";
-	display: block;
-	border-top: 50px solid lightskyblue;
-	border-right: 50px solid transparent;
+section::before { 
+	content: ""; 
+	display: block; 
+	border-top: 50px solid lightskyblue; 
+	border-right: 50px solid transparent; 
+}
 }
