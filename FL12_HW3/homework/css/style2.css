@@ -1,8 +1,30 @@
+p.header_heading::after {
+  content: "awesome";
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  background: #ff4e33; }
+
+p.section_text::after {
+  content: "adventure";
+  position: absolute;
+  left: 970px;
+  z-index: 1;
+  background: #ff4e33; }
+
+p.section_banner_heading::after {
+  content: "start";
+  position: absolute;
+  left: 123px;
+  z-index: 1;
+  background: #ff4e33; }
+
 body {
   background: #21232e;
   max-width: 1920px;
   margin: 0 auto;
-  color: white; }
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif; }
 
 header {
   background-image: url("../img/m-h-night.jpg");
@@ -10,56 +32,59 @@ header {
   background-size: cover;
   background-position: center;
   border-bottom-right-radius: 40%; }
-  header div.header-wrap {
-    margin-left: 185px; }
-    header div.header-wrap .landing-logo, header div.header-wrap footer div.footer-wrap .footer_logo, footer div.footer-wrap header div.header-wrap .footer_logo {
-      display: flex;
-      align-items: center;
-      width: 8%; }
-      header div.header-wrap .landing-logo p, header div.header-wrap footer div.footer-wrap .footer_logo p, footer div.footer-wrap header div.header-wrap .footer_logo p {
-        padding: 18px 0 0 15px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-family: "Hind", sans-serif;
-        font-size: 1.5em;
-        margin-top: 0;
-        font-weight: bold; }
-        header div.header-wrap .landing-logo p span, header div.header-wrap footer div.footer-wrap .footer_logo p span, footer div.footer-wrap header div.header-wrap .footer_logo p span {
-          font-size: x-small; }
-    header div.header-wrap .header_heading {
-      margin-top: 30px;
-      clear: both;
+
+div.landing-logo {
+  display: flex;
+  align-items: center;
+  max-width: 8%; }
+  div.landing-logo p {
+    padding: 18px 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Hind", sans-serif;
+    font-size: 1.5em;
+    margin-top: 0;
+    font-weight: bold; }
+    div.landing-logo p span {
+      font-size: x-small; }
+
+.header-wrap {
+  margin-left: 185px; }
+  .header-wrap .header_heading {
+    margin-top: 30px;
+    clear: both;
+    display: block;
+    width: 472px;
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: 2px;
+    position: relative; }
+  .header-wrap .header_text {
+    margin-left: -45px;
+    white-space: pre;
+    font-family: "Hind", sans-serif;
+    font-size: 15px; }
+  .header-wrap div {
+    display: flex;
+    align-items: center;
+    width: 27%;
+    justify-content: space-between; }
+    .header-wrap div .header_button {
       display: block;
-      width: 472px;
-      font: bold 60px "Source Sans Pro", sans-serif;
-      letter-spacing: 2px; }
-    header div.header-wrap .header_text {
-      margin-left: -45px;
-      white-space: pre;
-      font-family: "Hind", sans-serif;
-      font-size: 15px; }
-    header div.header-wrap div {
-      display: flex;
-      align-items: center;
-      width: 26%;
-      justify-content: space-between; }
-      header div.header-wrap div .header_button {
-        display: block;
-        background-color: #e3ac00;
-        color: white;
-        width: 141px;
-        height: 47px;
-        font-family: "Source Sans Pro", sans-serif;
-        text-align: center;
-        border: 1px solid #e3ac00;
-        border-radius: 5px;
-        font-weight: bold;
-        font-size: medium; }
-      header div.header-wrap div .login {
-        font-family: "Source Sans Pro", sans-serif;
-        color: white;
-        font-size: medium; }
+      background-color: #e3ac00;
+      color: white;
+      width: 141px;
+      height: 47px;
+      text-align: center;
+      border: 1px solid #e3ac00;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: medium; }
+    .header-wrap div .login {
+      color: white;
+      font-size: medium;
+      font-weight: bold; }
 
 main {
   display: flex;
@@ -69,7 +94,7 @@ main {
     text-align: center;
     font-weight: 600;
     font-size: 45px;
-    font-family: "Source Sans Pro", sans-serif; }
+    position: relative; }
   main .section_card_wrap {
     margin: 0 auto;
     max-width: 58%; }
@@ -81,8 +106,7 @@ main {
       background-color: #3b3f50;
       padding: 20px;
       height: 325px;
-      margin-bottom: 25px;
-      font-family: "Hind", sans-serif; }
+      margin-bottom: 25px; }
       main .section_card_wrap .section_card .section_card_img {
         height: 100%;
         width: auto;
@@ -97,37 +121,46 @@ main {
           font-size: 30px;
           font-weight: bold; }
         main .section_card_wrap .section_card .section_card_right_container .section_card_text {
+          font-family: "Hind", sans-serif;
           width: 75%;
           text-align: justify; }
         main .section_card_wrap .section_card .section_card_right_container .section_link {
-          font-family: "Source Sans Pro", sans-serif;
           color: white; }
   main .section_banner {
+    display: flex;
     position: relative;
     top: 70px;
     z-index: 1;
     width: 1195px;
     height: 142px;
     margin: 0 auto;
-    background-image: linear-gradient(to right, #dea504, #14a0c7);
-    border-radius: 8px; }
+    background-image: linear-gradient(to right, #dea504, #96324f);
+    border-radius: 8px;
+    justify-content: space-around;
+    align-items: center; }
+    main .section_banner .section_banner_heading {
+      font-weight: bold;
+      margin: 0px;
+      font-size: 30px;
+      position: relative; }
     main .section_banner .section_banner_button {
       display: block;
       background-color: #e3ac00;
       color: white;
       width: 141px;
       height: 47px;
-      font-family: "Source Sans Pro", sans-serif;
       text-align: center;
       border: 1px solid #e3ac00;
       border-radius: 5px;
       font-weight: bold;
       font-size: medium; }
 
+.section_banner_text, footer {
+  color: white; }
+
 footer {
   background-color: #3b3f50;
   height: 242px;
-  color: white;
   display: flex;
   align-items: flex-end;
   font-family: "Hind", sans-serif; }

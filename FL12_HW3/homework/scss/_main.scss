@@ -4,7 +4,6 @@
 	color: white;
 	width: 141px;
 	height: 47px;
-	font-family: $headersFont;
 	text-align: center;
 	border: 1px solid $buttonColor;
 	border-radius: 5px;
@@ -12,22 +11,30 @@
 	font-size: medium;
 }
 @mixin link {
-	font-family: $headersFont;
 	color: white;
 }
-
-// $icons:("header_heading":"awesome", "section_text":"adventure", "section_banner_heading":"start");
-// @each $clas, $meaning in $icons{
-//     p.#{$clas}:before{
-//         dis
-//     }
-// }
+$identifier: ("header_heading":"awesome", "section_text":"adventure", "section_banner_heading":"start");
+$position: ("awesome":0px, "adventure":970px, "start":123px);
+@each $id, $word in $identifier {
+	@each $word2, $left in $position {
+		@if $word == $word2 {
+			p.#{$id}::after {
+				content: $word;
+				position: absolute;
+				left: $left;
+				z-index: 1;
+				background: $textHighlight;
+			}
+		}
+	}
+}
 
 body {
 	background: $backgroundColor;
 	max-width: 1920px;
 	margin: 0 auto;
 	color: $mainColor;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 header {
 	background-image: $headerImg;
@@ -35,61 +42,63 @@ header {
 	background-size: cover;
 	background-position: center;
 	border-bottom-right-radius: 40%;
-
-	div.header-wrap {
-		margin-left: 185px;
-		.landing-logo {
-			display: flex;
-			align-items: center;
-			width: 8%;
-			p {
-				padding: 18px 0 0 15px;
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				font-family: $textFont;
-				font-size: 1.5em;
-				margin-top: 0;
-				font-weight: bold;
-				span {
-					font-size: x-small;
-				}
-			}
+}
+div.landing-logo {
+	display: flex;
+	align-items: center;
+	max-width: 8%;
+	p {
+		padding: 18px 0 0 15px;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		font-family: $textFont;
+		font-size: 1.5em;
+		margin-top: 0;
+		font-weight: bold;
+		span {
+			font-size: x-small;
 		}
-		.header_heading {
-			margin-top: 30px;
-			clear: both;
-			display: block;
-			width: 472px;
-			font: bold 60px $headersFont;
-			letter-spacing: 2px;
-		}
+	}
+}
 
-		.header_text {
-			margin-left: -45px;
-			white-space: pre;
-			font-family: $textFont;
-			font-size: 15px;
-		}
-		div {
-			display: flex;
-			align-items: center;
-			width: 26%;
-			justify-content: space-between;
+.header-wrap {
+	margin-left: 185px;
 
-			.header_button {
-				@include button;
-			}
-			.login {
-				@include link;
-				font-size: medium;
-			}
+	.header_heading {
+		margin-top: 30px;
+		clear: both;
+		display: block;
+		width: 472px;
+		font-weight: bold;
+		font-size: 60px;
+		letter-spacing: 2px;
+		position: relative;
+	}
+
+	.header_text {
+		margin-left: -45px;
+		white-space: pre;
+		font-family: $textFont;
+		font-size: 15px;
+	}
+	div {
+		display: flex;
+		align-items: center;
+		width: 27%;
+		justify-content: space-between;
+
+		.header_button {
+			@include button;
+		}
+		.login {
+			@include link;
+			font-size: medium;
+			font-weight: bold;
 		}
 	}
 }
 main {
-	// margin: 0 auto;
-	// max-width: 60%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -97,7 +106,7 @@ main {
 		text-align: center;
 		font-weight: 600;
 		font-size: 45px;
-		font-family: $headersFont;
+		position: relative;
 	}
 
 	.section_card_wrap {
@@ -107,13 +116,11 @@ main {
 			border-radius: 8px;
 			color: white;
 			display: flex;
-
 			align-items: center;
 			background-color: $cardColor;
 			padding: 20px;
 			height: 325px;
 			margin-bottom: 25px;
-			font-family: $textFont;
 			.section_card_img {
 				height: 100%;
 				width: auto;
@@ -130,6 +137,7 @@ main {
 					font-weight: bold;
 				}
 				.section_card_text {
+					font-family: $textFont;
 					width: 75%;
 					text-align: justify;
 				}
@@ -140,23 +148,38 @@ main {
 		}
 	}
 	.section_banner {
+		display: flex;
 		position: relative;
 		top: 70px;
 		z-index: 1;
 		width: 1195px;
 		height: 142px;
 		margin: 0 auto;
-		background-image: linear-gradient(to right, $gradientFrom, $textHighlight);
+		background-image: linear-gradient(to right, $gradientFrom, $gradientTo);
 		border-radius: 8px;
+		justify-content: space-around;
+		align-items: center;
+
+		.section_banner_heading {
+			font-weight: bold;
+			margin: 0px;
+			font-size: 30px;
+			position: relative;
+		}
 		.section_banner_button {
 			@include button;
 		}
 	}
 }
+
+.section_banner_text {
+	color: white;
+}
+
 footer {
+	@extend .section_banner_text;
 	background-color: $cardColor;
 	height: 242px;
-	color: white;
 	display: flex;
 	align-items: flex-end;
 	font-family: $textFont;
@@ -169,9 +192,6 @@ footer {
 		.footer_text {
 			font-size: small;
 			max-width: 290px;
-		}
-		.footer_logo {
-			@extend .landing-logo; // не работает
 		}
 	}
 }
