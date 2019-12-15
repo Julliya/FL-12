@@ -1,1 +1,177 @@
-// Write your styles here
+@mixin button {
+	display: block;
+	background-color: $buttonColor;
+	color: white;
+	width: 141px;
+	height: 47px;
+	font-family: $headersFont;
+	text-align: center;
+	border: 1px solid $buttonColor;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: medium;
+}
+@mixin link {
+	font-family: $headersFont;
+	color: white;
+}
+
+// $icons:("header_heading":"awesome", "section_text":"adventure", "section_banner_heading":"start");
+// @each $clas, $meaning in $icons{
+//     p.#{$clas}:before{
+//         dis
+//     }
+// }
+
+body {
+	background: $backgroundColor;
+	max-width: 1920px;
+	margin: 0 auto;
+	color: $mainColor;
+}
+header {
+	background-image: $headerImg;
+	height: 715px;
+	background-size: cover;
+	background-position: center;
+	border-bottom-right-radius: 40%;
+
+	div.header-wrap {
+		margin-left: 185px;
+		.landing-logo {
+			display: flex;
+			align-items: center;
+			width: 8%;
+			p {
+				padding: 18px 0 0 15px;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				font-family: $textFont;
+				font-size: 1.5em;
+				margin-top: 0;
+				font-weight: bold;
+				span {
+					font-size: x-small;
+				}
+			}
+		}
+		.header_heading {
+			margin-top: 30px;
+			clear: both;
+			display: block;
+			width: 472px;
+			font: bold 60px $headersFont;
+			letter-spacing: 2px;
+		}
+
+		.header_text {
+			margin-left: -45px;
+			white-space: pre;
+			font-family: $textFont;
+			font-size: 15px;
+		}
+		div {
+			display: flex;
+			align-items: center;
+			width: 26%;
+			justify-content: space-between;
+
+			.header_button {
+				@include button;
+			}
+			.login {
+				@include link;
+				font-size: medium;
+			}
+		}
+	}
+}
+main {
+	// margin: 0 auto;
+	// max-width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.section_text {
+		text-align: center;
+		font-weight: 600;
+		font-size: 45px;
+		font-family: $headersFont;
+	}
+
+	.section_card_wrap {
+		margin: 0 auto;
+		max-width: 58%;
+		.section_card {
+			border-radius: 8px;
+			color: white;
+			display: flex;
+
+			align-items: center;
+			background-color: $cardColor;
+			padding: 20px;
+			height: 325px;
+			margin-bottom: 25px;
+			font-family: $textFont;
+			.section_card_img {
+				height: 100%;
+				width: auto;
+				border-radius: 8px;
+			}
+			.section_card_right_container {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
+				width: 60%;
+				.section_card_heading {
+					font-size: 30px;
+					font-weight: bold;
+				}
+				.section_card_text {
+					width: 75%;
+					text-align: justify;
+				}
+				.section_link {
+					@include link;
+				}
+			}
+		}
+	}
+	.section_banner {
+		position: relative;
+		top: 70px;
+		z-index: 1;
+		width: 1195px;
+		height: 142px;
+		margin: 0 auto;
+		background-image: linear-gradient(to right, $gradientFrom, $textHighlight);
+		border-radius: 8px;
+		.section_banner_button {
+			@include button;
+		}
+	}
+}
+footer {
+	background-color: $cardColor;
+	height: 242px;
+	color: white;
+	display: flex;
+	align-items: flex-end;
+	font-family: $textFont;
+	div.footer-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		height: 80%;
+		.footer_text {
+			font-size: small;
+			max-width: 290px;
+		}
+		.footer_logo {
+			@extend .landing-logo; // не работает
+		}
+	}
+}
