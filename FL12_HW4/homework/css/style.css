@@ -1,0 +1,17 @@
+.main-nav {
+	display: flex;
+}
+header {
+	background-image: url('../img/home-bg.jpg');
+	background-size: 100%;
+}
+
+.hero-image {
+	display: flex;
+
+	min-width: 900px;
+}
+.avatar {
+	border-radius: 50%;
+	height: 2.5em;
+}
