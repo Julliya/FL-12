@@ -1,39 +1,117 @@
+body {
+	font-size: 15px;
+	font-family: 'Merriweather', serif;
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 20px;
+	background-color: #ffffff;
+	font-weight: bold;
+}
+
 .main-nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #ffffff;
+	z-index: 2;
 }
 .site-name {
 	text-transform: uppercase;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	letter-spacing: 3px;
+	color: #000;
 }
 ul {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 }
 li.nav-item {
 	list-style-type: none;
+	display: block;
+	padding: 10px;
+}
+.nav-item-link {
 	text-decoration: none;
+	color: #777;
+}
+.nav-item-link:hover {
+	color: #bfba55;
 }
 
-.hero-image {
+.hero-section {
+	position: relative;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/home-bg.jpg');
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
+	justify-content: center;
+	margin: 2em 0;
+}
+.hero-section p {
+	color: #bfba55;
+}
+.hero-content {
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
-.hero-text h1 {
-	color: white;
+.hero-content h1 {
+	color: #ffffff;
+	font-size: 3em;
+}
+.hero-button {
+	text-transform: uppercase;
+	color: #000;
+}
+section.articles {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 auto;
+	max-width: 900px;
+}
+article.news {
+	margin: 2em 0;
+}
+.article-img {
+	width: 100%;
 }
 .avatar {
 	border-radius: 50%;
 	height: 2.5em;
+}
+.article-info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	color: #777;
+	font-size: 0.7em;
+}
+.article-text {
+	color: #777;
+}
+
+.open-article {
+	border: 1px solid #777;
+	color: #777;
+	margin: 0 0 3em 0;
+}
+footer {
+	background-color: black;
+	color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }

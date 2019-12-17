@@ -6,7 +6,7 @@
 <meta charset="utf-8">
   
 <title>Front-end lab</title>
-  
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">  
 <link rel="stylesheet" href="css/style.css">
 
 </head> 
@@ -25,15 +25,16 @@
                 <li class="nav-item"><a href="#about" class="nav-item-link">Contact</a></li>
             </ul>
 	    </nav>
-        <div class="hero-image">
-            <div class="hero-text">
+        <div class="hero-section">
+            <div class="hero-content">
                 <h1>Hello! This is Front-end Lab.</h1>
                 <p>EPAM Front-end Lab</p>
-                <button class="open-article">Discover More</button>
+                <button class="hero-button">Discover More</button>
             </div>
       </div>
 	</header>
     <main>
+        <section class="articles">
         <article class="news"> 
             <img class="article-img" src="img/blog-image1.jpg" alt="girl on a bridge">
             <header>
@@ -45,10 +46,11 @@
                 <time>July 22, 2017</time>
                 <p>35 Comments</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <button class="open-article">Continue Reading</button> 
+            <hr>
         </article>
         <article class="news"> 
             <img class="article-img" src="img/blog-image2.jpg" alt="girl on a bridge">
@@ -59,12 +61,13 @@
                 <img src="img/author-image2.jpg" alt="Leo's avatar" class="avatar">
                 <p>Leo Dennis</p>
                 <time>June 10, 2017</time>
-                <p>48 Comments</p>
+                <p class="comment">48 Comments</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <button class="open-article">Continue Reading</button> 
+            <hr>
         </article>
         <article class="news"> 
             <img class="article-img" src="img/blog-image3.jpg" alt="girl on a bridge">
@@ -77,10 +80,11 @@
                 <time>May 30, 2017</time>
                 <p>63 Comments</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <button class="open-article">Continue Reading</button> 
+            <hr>
         </article>
         <article class="news"> 
             <img class="article-img" src="img/blog-image4.jpg" alt="girl on a bridge">
@@ -93,10 +97,11 @@
                 <time>April 18, 2017</time>
                 <p>124 Comments</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <button class="open-article">Continue Reading</button> 
+            <hr>
         </article>
         <article class="news"> 
             <img class="article-img" src="img/blog-image5.jpg" alt="girl on a bridge">
@@ -109,24 +114,30 @@
                 <time>March 12, 2017</time>
                 <p>124 Comments</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <button class="open-article">Continue Reading</button> 
         </article>
+    </section>
     </main>
     <footer>
-        <p calss="footer-heading">EPAM LAB</p>
-        <p class="footer-text">Lorem ipsum dolor sit amet, consetetur 
-            sadipscing elitr, sed diam nonumy eirmod tempor 
-            invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua.</p>
-            
-        <p class="footer-text">Copyright © 2019 EPAM</p>
-        <p calss="footer-heading">Talk to us</p>
-        <p class="footer-text">12 Delicious Street, San Francisco, CA 10880</p>5
-        <p class="footer-text">010-020-0990</p>
-        <p class="footer-text">info@company.com</p>
+        <div class="column-left">
+            <p calss="footer-heading">EPAM LAB</p>
+            <p class="footer-text">Lorem ipsum dolor sit amet, consetetur 
+                sadipscing elitr, sed diam nonumy eirmod tempor 
+                invidunt ut labore et dolore magna aliquyam erat, 
+                sed diam voluptua.</p>
+                
+            <p class="footer-text">Copyright © 2019 EPAM</p>
+        </div>
+        <div class="column-right">
+                <p calss="footer-heading">Talk to us</p>
+                <p class="footer-text">12 Delicious Street, San Francisco, CA 10880</p>5
+                <p class="footer-text">010-020-0990</p>
+                <p class="footer-text">info@company.com</p>
+        </div>
+       
     </footer>
 
 </body>
