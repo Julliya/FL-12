@@ -17,6 +17,7 @@ button {
 	align-items: center;
 	position: fixed;
 	top: 0;
+	left: 0;
 	width: 100%;
 	background-color: #ffffff;
 	z-index: 2;
@@ -54,7 +55,7 @@ li.nav-item {
 	background-size: cover;
 	display: flex;
 	justify-content: center;
-	margin: 2em 0;
+	margin: 4em 0 2em 0;
 }
 .hero-section p {
 	color: #bfba55;
@@ -73,7 +74,7 @@ li.nav-item {
 	text-transform: uppercase;
 	color: #000;
 }
-section.articles {
+div.articles {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -82,14 +83,14 @@ section.articles {
 	max-width: 900px;
 }
 article.news {
-	margin: 2em 0;
+	margin: 2.5em 0;
 }
 .article-img {
 	width: 100%;
 }
 .avatar {
 	border-radius: 50%;
-	height: 2.5em;
+	height: 3.5em;
 }
 .article-info {
 	display: flex;
@@ -98,6 +99,11 @@ article.news {
 	justify-content: start;
 	color: #777;
 	font-size: 0.7em;
+}
+.time,
+.author,
+.comment {
+	margin: 0 0 0 1em;
 }
 .article-text {
 	color: #777;
@@ -111,7 +117,29 @@ article.news {
 footer {
 	background-color: black;
 	color: #ffffff;
+}
+.footer-content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
+	flex: 0 0 auto;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.column-left,
+.column-right {
+	margin: 4em 0 4em 0;
+}
+.column-left {
+	width: 35vw;
+}
+.column-right {
+	width: 25vw;
+}
+.footer-heading {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.footer-text {
+	color: #777;
 }
