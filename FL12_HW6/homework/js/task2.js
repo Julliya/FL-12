@@ -8,12 +8,15 @@ if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c)) {
 } else {
 	if (Number.isInteger(a) && Number.isInteger(b) && Number.isInteger(c)) {
 		if (a > 0 && b > 0 && c > 0) {
-			if (a === b && b === c) {
-				console.log('Equilateral triangle');
-			} else if (a === b || b === c || c === a) {
-				console.log('Equilateral triangle');
-			} else if (a + b > c || b + c > a || a + c > b) {
-				console.log('Isosceles triangle');
+			let max = Math.max(a, b, c);
+			if ((max === a && b + c > max) || (max === b && a + c > max) || (max === c && b + a > max)) {
+				if (a === b && b === c) {
+					console.log('Equilateral triangle');
+				} else if (a === b || b === c || c === a) {
+					console.log('Equilateral triangle');
+				} else {
+					console.log('Isosceles triangle');
+				}
 			} else {
 				console.log('Triangle doesn’t exist');
 			}
