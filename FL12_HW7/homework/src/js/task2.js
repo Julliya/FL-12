@@ -1,24 +1,22 @@
-let start = confirm('Do you want to play a game?');
 let min = 0;
+let defaulMax = 8;
 let max = 8;
 let delta = 4;
+let finish = true;
 let totalPrize = 0;
-let counter = 0;
-let finish = false;
-let attempts = 3;
+
+let prize = {
+	3: 100,
+	2: 50,
+	1: 25
+};
+let start = confirm('Do you want to play a game?');
 
 if (start) {
-	while (counter < 5) {
+	while (finish === true) {
 		let number = Math.round(Math.random() * (max - min) + min);
-		for (; attempts >= 1; ) {
-			let prize;
-			if (attempts === 3) {
-				prize = 100;
-			} else if (attempts === 2) {
-				prize = 50;
-			} else {
-				prize = 25;
-			}
+		let attempts = 3;
+		while (attempts > 0) {
 			let userNum = prompt(
 				'Choose a roulette pocket number from ' +
 					min +
@@ -29,28 +27,35 @@ if (start) {
 					'\n Total prize ' +
 					totalPrize +
 					'$ \n Possible prize on current attempt: ' +
-					prize +
+					prize[attempts] +
 					'$'
 			);
 			if (Number.isNaN(Number(userNum))) {
 				alert('Invalid input data');
 				attempts--;
-			} else if (userNum === null) {
+			} else if (userNum === null || userNum === '') {
 				attempts--;
-			} else if (Number(userNum) != number) {
+			} else if (Number(userNum) !== number) {
 				attempts--;
 			} else if (Number(userNum) === number) {
-				totalPrize += prize;
-				finish = confirm(
-					'Congratulation, you won! \n Your prize is: ' + totalPrize + '$. \n Do you want to continue?'
-				);
+				totalPrize += prize[attempts];
+				// win = true;
+				break;
+			}
+			if (attempts === 0) {
+				totalPrize = 0;
 			}
 		}
-		if (finish) {
-			max = max + delta;
-			counter++;
+
+		if (totalPrize !== 0) {
+			finish = confirm(
+				'Congratulation, you won! \n Your prize is: ' + totalPrize + '$. \n Do you want to continue?'
+			);
+			max += delta;
 		} else {
-			counter++;
+			alert('Thank you for your participation. Your prize is: ' + totalPrize + ' $');
+			finish = confirm('Do you want to play again?');
+			max = defaulMax;
 		}
 	}
 } else {
