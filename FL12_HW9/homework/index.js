@@ -37,11 +37,22 @@ function filterArray(arr, callback) {
 			newArr.push(el);
 		}
 	});
-	console.log(newArr);
-	// return newArr;
+	return newArr;
 }
-
 filterArray([ 2, 5, 8 ], function(el) {
 	return el % 2 === 0;
-});
-// returns [2, 8]
+}); // returns [2, 8]
+
+function flipOver(string) {
+	let reverseString = '';
+	for (let i = string.length - 1; i >= 0; i--) {
+		reverseString += string[i];
+	}
+	console.log(reverseString);
+}
+flipOver('hey world'); // 'dlrow yeh'
+
+// function makeListFromRange(range) {
+
+// }
+// makeListFromRange([ 2, 7 ]); // [2, 3, 4, 5, 6, 7]
