@@ -52,7 +52,11 @@ function flipOver(string) {
 }
 flipOver('hey world'); // 'dlrow yeh'
 
-// function makeListFromRange(range) {
-
-// }
-// makeListFromRange([ 2, 7 ]); // [2, 3, 4, 5, 6, 7]
+function makeListFromRange(range) {
+	let newArr = [];
+	for (let i = range[0]; i <= range[1]; i++) {
+		newArr.push(i);
+	}
+	console.log(newArr);
+}
+makeListFromRange([ 2, 7 ]); // [2, 3, 4, 5, 6, 7]
