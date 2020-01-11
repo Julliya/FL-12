@@ -17,4 +17,31 @@ function executeforEach(arr, callback) {
 }
 executeforEach([ 1, 2, 3 ], function(el) {
 	console.log(el * 2);
+}); // logs 2 4 6
+
+function mapArray(arr, callback) {
+	let newArr = [];
+	executeforEach(arr, function(el) {
+		newArr.push(callback(el));
+	});
+	return newArr;
+}
+mapArray([ 2, '5', 8 ], function(el) {
+	return +el + 3;
+}); // returns [5, 8, 11]
+
+function filterArray(arr, callback) {
+	let newArr = [];
+	executeforEach(arr, function(el) {
+		if (callback(el) === true) {
+			newArr.push(el);
+		}
+	});
+	console.log(newArr);
+	// return newArr;
+}
+
+filterArray([ 2, 5, 8 ], function(el) {
+	return el % 2 === 0;
 });
+// returns [2, 8]
