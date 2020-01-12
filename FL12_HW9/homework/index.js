@@ -83,9 +83,21 @@ function getPastDay(fullDate, days) {
 	const date = new Date(fullDate);
 	const newDate = new Date(date);
 	newDate.setDate(newDate.getDate() - days);
-	console.log(newDate.getDate());
+	return newDate.getDate();
 }
 const date = new Date(2019, 0, 2);
-getPastDay(date, 1); // 1, (1 Jan 2019)
-getPastDay(date, 2); // 31, (31 Dec 2018)
-getPastDay(date, 365); // 2, (2 Jan 2018)
+console.log(getPastDay(date, 1)); // 1, (1 Jan 2019)
+console.log(getPastDay(date, 2)); // 31, (31 Dec 2018)
+console.log(getPastDay(date, 365)); // 2, (2 Jan 2018)
+
+function formatDate(date) {
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
+	const ten = 10;
+	hours = hours < ten ? '0' + hours : hours;
+	minutes = minutes < ten ? '0' + minutes : minutes;
+	const format = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${hours}:${minutes}`;
+	return format;
+}
+console.log(formatDate(new Date('6/15/2018 09:15:00'))); // "2018/6/15 09:15"
+console.log(formatDate(new Date())); // "2020/1/7 12:56" // gets current local time
