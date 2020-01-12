@@ -77,5 +77,15 @@ function substitute(array) {
 		return el < minNum ? '*' : el;
 	});
 }
-
 console.log(substitute([ 58, 14, 48, 2, 31, 29 ])); // [58, '*', 48, '*', 31, '*']
+
+function getPastDay(fullDate, days) {
+	const date = new Date(fullDate);
+	const newDate = new Date(date);
+	newDate.setDate(newDate.getDate() - days);
+	console.log(newDate.getDate());
+}
+const date = new Date(2019, 0, 2);
+getPastDay(date, 1); // 1, (1 Jan 2019)
+getPastDay(date, 2); // 31, (31 Dec 2018)
+getPastDay(date, 365); // 2, (2 Jan 2018)
