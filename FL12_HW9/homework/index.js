@@ -70,3 +70,12 @@ function getArrayOfKeys(array, key) {
 }
 const actors = [ { name: 'tommy', age: 36 }, { name: 'lee', age: 28 } ];
 getArrayOfKeys(actors, 'name'); // [‘tommy’, ‘lee’]
+
+function substitute(array) {
+	const minNum = 30;
+	return mapArray(array, (el) => {
+		return el < minNum ? '*' : el;
+	});
+}
+
+console.log(substitute([ 58, 14, 48, 2, 31, 29 ])); // [58, '*', 48, '*', 31, '*']
