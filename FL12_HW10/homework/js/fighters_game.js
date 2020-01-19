@@ -77,32 +77,5 @@ function battle(fighter1, fighter2) {
 }
 
 const myFighter = new Fighter({ name: 'Maximus', damage: 40, hp: 80, strength: 30, agility: 25 });
-const myFighter2 = new Fighter({ name: 'Nukole', damage: 30, hp: 100, strength: 10, agility: 20 });
-
-// let damage = myFighter.getDamage();
-// console.log('damage ' + damage);
-
-// let strength = myFighter.getStrength();
-// console.log('strength ' + strength);
-
-// let agility = myFighter.getAgility();
-// console.log('agility ' + agility);
-
-// let health = myFighter.getHealth();
-// console.log('max health ' + health);
-
-// let health2 = myFighter2.getHealth();
-// console.log('nic health ' + health2);
-
-// myFighter.logCombatHistory();
-
-// console.log('nik health with + ' + myFighter2.heal(10));
-
-// let health2 = myFighter2.getHealth();
-// console.log('nik health ' + health2);
-
-// myFighter.addWin();
-// myFighter.addLoss();
-
-// battle(myFighter, myFighter2);
-// battle(myFighter, myFighter2);
+const myFighter2 = new Fighter({ name: 'Nickole', damage: 30, hp: 100, strength: 10, agility: 20 });
+battle(myFighter, myFighter2);
