@@ -45,10 +45,11 @@ function createDOM(container, array) {
 	}
 	for (let node of array) {
 		const list = document.createElement('li');
+		const sp = document.createElement('span');
+		sp.setAttribute('class', 'item');
+		list.appendChild(sp);
 		if (node.folder) {
-			const sp = document.createElement('span');
-			sp.setAttribute('class', 'folder');
-			list.appendChild(sp);
+			sp.classList.add('folder');
 			sp.innerHTML = `<i class="material-icons color">folder</i>${node.title}`;
 			if (!node.children) {
 				const ul2 = document.createElement('ul');
@@ -60,7 +61,7 @@ function createDOM(container, array) {
 				ul2.appendChild(list2);
 			}
 		} else {
-			list.innerHTML = `<i class="material-icons md-inactive">insert_drive_file</i>${node.title}`;
+			sp.innerHTML = `<i class="material-icons md-inactive">insert_drive_file</i>${node.title}`;
 		}
 		ul.appendChild(list);
 
@@ -81,7 +82,15 @@ for (let i = 0; i < toggler.length; i++) {
 		} else {
 			this.firstChild.innerHTML = 'folder';
 		}
+	});
+}
 
-		// this.classList.toggle('caret-down');
+const lists = document.getElementsByClassName('item');
+for (let i = 0; i < lists.length; i++) {
+	lists[i].addEventListener('mouseover', function() {
+		this.classList.add('hover');
+	});
+	lists[i].addEventListener('mouseout', function() {
+		this.classList.remove('hover');
 	});
 }
