@@ -46,12 +46,18 @@ function createDOM(container, array) {
 	for (let node of array) {
 		const list = document.createElement('li');
 		if (node.folder) {
-			list.innerHTML = `<span class="folder"><i class="material-icons color">folder</i>${node.title}</span>`;
+			const sp = document.createElement('span');
+			sp.setAttribute('class', 'folder');
+			list.appendChild(sp);
+			sp.innerHTML = `<i class="material-icons color">folder</i>${node.title}`;
 			if (!node.children) {
+				const ul2 = document.createElement('ul');
+				ul2.setAttribute('class', 'hidden');
+				sp.after(ul2);
 				const list2 = document.createElement('li');
 				list2.setAttribute('class', 'empty');
 				list2.innerHTML = 'Folder is empty';
-				list.appendChild(list2);
+				ul2.appendChild(list2);
 			}
 		} else {
 			list.innerHTML = `<i class="material-icons md-inactive">insert_drive_file</i>${node.title}`;
@@ -70,6 +76,12 @@ const toggler = document.getElementsByClassName('folder');
 for (let i = 0; i < toggler.length; i++) {
 	toggler[i].addEventListener('click', function() {
 		this.parentElement.querySelector('.hidden').classList.toggle('active');
+		if (this.nextSibling.classList.contains('active')) {
+			this.firstChild.innerHTML = 'folder_open';
+		} else {
+			this.firstChild.innerHTML = 'folder';
+		}
+
 		// this.classList.toggle('caret-down');
 	});
 }

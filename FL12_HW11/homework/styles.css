@@ -20,6 +20,9 @@ i {
 .empty {
 	font-style: italic;
 	list-style-type: none;
+	display: block;
+	position: relative;
+	left: -3%;
 }
 
 .folder {
